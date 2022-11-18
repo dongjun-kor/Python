@@ -1,0 +1,12 @@
+import pandas as pd
+data1= pd.read_csv("/content/drive/MyDrive/Colab Notebooks/데이터 시작.csv",encoding="cp949")
+print(data1.head(5))
+splited=data1['독립항'].str.split('\[청구항',expand=True)
+print(splited.head())
+import numpy as np
+splited1=np.transpose(splited)
+raw_data1 = pd.DataFrame(splited1)
+raw_data_new=pd.melt(raw_data1)
+raw_data3 = pd.DataFrame(raw_data_new)
+raw_data4=raw_data3.dropna(axis=0)
+raw_data4.to_excel(excel_writer='a5.xlsx')
