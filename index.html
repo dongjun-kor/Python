@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Excel File Uploader</title>
+  </head>
+  <body>
+    <h1>Upload an Excel File</h1>
+    <form method="POST" action="{{ url_for('upload') }}" enctype="multipart/form-data">
+      <input type="file" name="file">
+      <input type="submit" value="Upload">
+    </form>
+  </body>
+</html>
